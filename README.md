@@ -10,3 +10,31 @@
 - Анализ компромиссов между разрежённым хранением, накладными расходами параллелизма и выбором порядка операций на парах тензоров и цепочках.
 
 **Стек:** Python, NumPy, модуль `practice/` (бенчмарки, отчёты по экспериментам).
+
+
+## Структура модулей
+
+| Модуль | Назначение |
+|--------|------------|
+| `ziptree_tensor.py` | Класс `ZipTreeTensor`, узлы дерева, операции над разрежённым тензором |
+| `lambda_mu.py` | (λ,μ)-свёртка, эталон `lambda_mu_dense_numpy`, цепочки и DP-исполнение |
+| `chain_optimize.py` | DP и исполнение оптимального порядка скобок для цепочки |
+| `cannon_tensor.py` | Блочный Кэннон для свёртки, приведение к плотному виду |
+| `cannon_parallel.py` | Параллельные фазы Кэннона (`ProcessPoolExecutor`) |
+| `bench_*.py` | Точечные бенчмарки скорости (пары, цепочки, параллельное сравнение) |
+
+## Бенчмарки
+
+```text
+python -m practice.bench_multiply_speed
+python -m practice.bench_lambda_mu_pair_speed
+python -m practice.bench_lambda_mu_chain_speed
+python -m practice.bench_parallel_cannon_compare
+```
+
+Флаг `--quick` сокращает набор сценариев для проверки пайплайна.
+
+
+## Ноутбук
+
+`evaluation.ipynb` — разбор и визуализация результатов в интерактивном виде
