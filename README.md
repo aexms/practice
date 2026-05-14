@@ -1,4 +1,3 @@
-<img width="1329" height="508" alt="graph1" src="https://github.com/user-attachments/assets/a65a0bad-d5fa-4f17-81ba-2028f27302bb" />
 ### Выпускная квалификационная работа (ВКР)
 
 *2025 — 2026*
